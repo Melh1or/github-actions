@@ -15,12 +15,12 @@ jobs:
         with:
           path: build
           name: build-files
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build-files
-          path: build
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: download artifact
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: build-files
+  #         path: build
