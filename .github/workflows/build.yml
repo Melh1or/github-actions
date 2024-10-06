@@ -7,20 +7,20 @@ jobs:
       - name: get repo code
         uses: actions/checkout@v3
       - name: install desp
-        uses: npm install
+        run: npm install
       - name: run build
         run: npm run build
-      # - name: upload artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     path: build
-      #     name: build-files
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: download artifact
-  #       uses: actions/download-artifact@v3
-  #       with:
-  #         name: build-files
-  #         path: build
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: build
+          name: build-files
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: build
