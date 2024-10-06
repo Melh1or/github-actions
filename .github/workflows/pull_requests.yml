@@ -1,5 +1,4 @@
 name: pull requests
-# on: [push, workflow_dispatch]
 on:
   workflow_dispatch:
   pull_request:
