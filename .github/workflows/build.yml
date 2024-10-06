@@ -10,11 +10,11 @@ jobs:
         uses: npm install
       - name: run build
         run: npm run build
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          path: build
-          name: build-files
+      # - name: upload artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     path: build
+      #     name: build-files
   # deploy:
   #   needs: build
   #   runs-on: ubuntu-latest
